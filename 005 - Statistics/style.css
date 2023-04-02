@@ -1,0 +1,300 @@
+.container {
+	height: 400px;
+	width: 400px;
+	background-color: #42a7a1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 5px;
+	box-shadow: 1px 2px 5px 5px rgba(0, 0, 0, 0.1);
+	font-family: "Open Sans", Helvetica, sans-serif;
+	line-height: 1.15;
+}
+
+.window {
+	height: 220px;
+	width: 280px;
+	background-color: #fff;
+	position: absolute;
+	top: 90px;
+	left: 60px;
+	border-radius: 3px;
+	box-shadow: 4px 5px 3px 3px rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+}
+
+.header {
+	height: 60px;
+	width: 100%;
+	background-color: #f1ba64;
+	color: #fff;
+	position: relative;
+	border-radius: 3px 3px 0 0;
+}
+
+.large {
+	position: absolute;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 15.5px;
+}
+
+.small {
+	position: absolute;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.report {
+	top: 10px;
+	left: 15px;
+}
+
+.date {
+	top: 30px;
+	left: 15px;
+}
+
+.revenue {
+	top: 10px;
+	right: 18px;
+}
+
+.amount {
+	top: 26px;
+	right: 18px;
+}
+
+.parameters {
+	position: relative;
+	height: 40px;
+	font-size: 10px;
+	opacity: 0.65;
+}
+
+.views,
+.purchases {
+	position: absolute;
+	top: 50%;
+}
+
+.views {
+	left: 54%;
+}
+
+.purchases {
+	right: 13px;
+}
+
+.views::before,
+.purchases::before {
+	height: 3px;
+	width: 12px;
+	position: absolute;
+	top: 5px;
+	left: -20px;
+	border-radius: 25%;
+	content: "";
+}
+
+.views::before {
+	background-color: red;
+}
+.purchases::before {
+	background-color: blue;
+}
+
+.statistics {
+	height: 80px;
+	width: 260px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.line1,
+.line2,
+.line3 {
+	height: 1px;
+	width: 100%;
+	background-color: #f2f2f2;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+
+.line2 {
+	top: 40px;
+}
+
+.line3 {
+	top: 80px;
+}
+
+polyline {
+	stroke-width: 2px;
+	fill: none;
+	z-index: 2;
+}
+
+[class^="point-"] {
+	position: absolute;
+	height: 6px;
+	width: 6px;
+	border-radius: 3px;
+	z-index: 3;
+	cursor: pointer;
+}
+
+.plot1,
+.plot2 {
+	position: absolute;
+}
+
+.plot1 polyline {
+	stroke: red;
+}
+
+.plot1 [class^="point-"] {
+	background-color: red;
+}
+
+.plot1 .point-1 {
+	top: 44px;
+	left: 5px;
+}
+
+.plot1 .point-2 {
+	top: 9px;
+	left: 47px;
+}
+
+.plot1 .point-3 {
+	top: 20px;
+	left: 87px;
+}
+
+.plot1 .point-4 {
+	top: 8px;
+	left: 127px;
+}
+
+.plot1 .point-5 {
+	top: 35px;
+	left: 168px;
+}
+
+.plot1 .point-6 {
+	top: 44px;
+	left: 209px;
+}
+
+.plot1 .point-7 {
+	top: 17px;
+	left: 246px;
+}
+
+.plot2 polyline {
+	stroke: blue;
+}
+
+.plot2 [class^="point-"] {
+	background-color: blue;
+}
+
+.plot2 .point-1 {
+	top: 58px;
+	left: 5px;
+}
+
+.plot2 .point-2 {
+	top: 47px;
+	left: 47px;
+}
+
+.plot2 .point-3 {
+	top: 62px;
+	left: 87px;
+}
+
+.plot2 .point-4 {
+	top: 52px;
+	left: 127px;
+}
+
+.plot2 .point-5 {
+	top: 58px;
+	left: 168px;
+}
+
+.plot2 .point-6 {
+	top: 71px;
+	left: 209px;
+}
+
+.plot2 .point-7 {
+	top: 61px;
+	left: 246px;
+}
+
+.tooltip {
+	border-radius: 3px;
+	padding: 9px 6px;
+	position: absolute;
+	bottom: 15px;
+	left: -9px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(0%, 10px, 1px);
+	transition: transform ease-in-out 0.3s 0s;
+}
+
+.tooltip::after {
+	content: "";
+	height: 6px;
+	width: 6px;
+	position: absolute;
+	bottom: -4px;
+	left: 40%;
+	transform: rotate(45deg);
+}
+
+[class^="point-"]:hover .tooltip {
+	opacity: 1;
+	visibility: visible;
+	transform: translate3d(0%, 0, 1px);
+}
+
+.plot1 .tooltip {
+	left: -11px;
+}
+
+.plot1 .tooltip,
+.tooltip::after {
+	background-color: red;
+}
+
+.plot2 .tooltip,
+.plot2 .tooltip::after {
+	background-color: blue;
+}
+
+.days {
+	position: relative;
+	top: 12px;
+}
+
+.day {
+	opacity: 0.4;
+	text-transform: uppercase;
+	font-size: 11px;
+	padding: 7px;
+}
+
+.day:first-child {
+	padding-left: 10px;
+}
